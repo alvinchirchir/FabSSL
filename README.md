@@ -1,53 +1,100 @@
-# wafer-defect-ssl
+# Label-Efficient Image Classification
 
-**References**
-[1] S. Hazra, A. De, L. Cheng, J. Palmour, M. Schupbach, B. Hull, S.T. Allen, S. Bhattacharya, High switching
-performance of 1700-V, 50-A SiC power MOSFET over Si IGBT/BiMOSFET for advanced power conversion
-applications, IEEE Trans. Power Electron. 31 (2016) 4742–4754.
-[2] P.G. Neudeck, J.A. Powell, Performance limiting micropipe defects in silicon carbide wafers, IEEE Electron Device
-Lett. 15 (1994)63–65.
-[3] R.E.Sarpietro,C.Pino,S.Coffa,A.Messina,S.Palazzo,S.Battiato,C.Spampinato,F.Rundo,Explainabledeep
-learningsystemforadvancedsiliconandsiliconcarbideelectricalwaferdefectmapassessment,IEEEAccess10
-(2022) 99102–99128.
-[4] L.Lai,Y.Cui,Y.Zhong,K.Y.Cheong,H.Linewih,X.Xu,J.Han,Impactsofsiliconcarbidedefectsonelectrical
-characteristics ofSiC devices, J. Appl. Phys. 137 (2025)060701.
-[5] P.Bergman,H.Lendenmann,P.A.Nilsson,U.Lindefelt,P.Skytt,Crystaldefectsassourceofanomalousforward
-voltage increaseof4H-SiC diodes,Mater.Sci.Forum353–356 (2001) 299–302.
-[6] S.I. Maximenko, J.A. Freitas Jr., R.L. Myers-Ward, K.-K. Lew, B.L. VanMil, C.R. Eddy Jr., D.K. Gaskill, P.G.
-Muzykov, T.S. Sudarshan, Effect of threading screw and edge dislocations on transport properties of 4H-SiC
-homoepitaxial layers, J. Appl. Phys. 108 (2010) 013708.
-[7] P.-C. Chen, W.-C. Miao, T. Ahmed, Y.-Y. Pan, C.-L. Lin, S.-C. Chen, H.-C. Kuo, B.-Y. Tsui, D.-H. Lien, Defect
-inspection techniques in SiC, Nanoscale Res.Lett.17 (2022) 30.
-[8] R.Berthold,M.Rambach,T.Erlbacher,A.J.Bauer,H.Ryssel,NewSiCepitaxialgrowthprocesswithupto100%
-BPD to TEDdefect conversionon 150mmhot-wallCVD reactor,Mater. Sci.Forum 963 (2019) 123–126.
-[9] M.Kusunoki,Y.Mori,H.Tsuchida,T.Kimoto,Combiningunsupervisedandsupervisedlearninginmicroscopy
-enables defectanalysis of afull 4H-SiC wafer, MRS Commun. 14 (2024)530–536.
-[10] T. Chen, S. Kornblith, M. Norouzi, G. Hinton, A simple framework for contrastive learning of visual representations,
-in: Proc. 37th Int.Conf.Machine Learning(ICML),PMLR 119, 2020, pp. 1597–1607.
-[11] J.-B. Grill, F. Strub, F. Altché, C. Tallec, P. Richemond, E. Buchatskaya, C. Doersch, B. Avila Pires, Z. Guo, M.
-Gheshlaghi Azar, B. Piot, K. Kavukcuoglu, R. Munos, M. Valko, Bootstrap your own latent: a new approach to
-self-supervisedlearning,in: AdvancesinNeuralInformationProcessingSystems(NeurIPS)33(2020)21271–21284.
-[12] M. Oquab, T. Darcet, T. Moutakanni, H. Vo, M. Szafraniec, V. Khalidov, P. Fernandez, D. Haziza, F. Massa, A.
-El-Nouby, H. Jégou, DINOv2: learning robust visual features without supervision, Trans. Mach. Learn. Res. (2024).
-[13] A.Dosovitskiy,L.Beyer,A.Kolesnikov,D.Weissenborn,X.Zhai,T.Unterthiner,M.Dehghani,M.Minderer,G.
-Heigold, S. Gelly, J. Uszkoreit, N. Houlsby, An image is worth 16x16 words: transformers for image recognition at
-scale, in: Proc. 9thInt. Conf. Learning Representations (ICLR), 2021.
-[14] W. Cai, Q. Zhang, J. Yan, Y. Zhao, Exploring active learning for semiconductor defect segmentation, in: Proc. IEEE
-Int. Conf. ImageProcessing(ICIP),2022,pp. 1–5.
-[15] B.Settles,Activelearningliteraturesurvey,ComputerSciencesTechnicalReport1648,UniversityofWisconsin–
-Madison,2009.
-[16] [17] F. Zhdanov, Diverse mini-batch active learning, arXiv:1901.05954(2019).
-G. Hacohen, A. Dekel, D. Weinshall, Active learning on a budget: opposite strategies suit high and low budgets, in:
-Proc. 39th Int.Conf.Machine Learning (ICML), PMLR 162, 2022, pp. 8175–8195.
-[18] J. Deng, W. Dong, R. Socher, L.-J. Li, K. Li, L. Fei-Fei, ImageNet: a large-scale hierarchical image database, in:
-Proc. IEEEConf.Computer Vision and Pattern Recognition (CVPR), 2009, pp. 248–255.
-[19] K. He, X. Zhang, S. Ren, J. Sun, Deep residual learning for image recognition, in: Proc. IEEE Conf. Computer
-VisionandPatternRecognition(CVPR), 2016, pp. 770–778.
-[20] F. Wilcoxon,Individual comparisons by ranking methods,Biometrics Bull. 1(1945) 80–83.
-[21] Y.Tian,X.Chen,S.Ganguli,Understandingself-supervisedlearningdynamicswithoutcontrastivepairs,in: Proc.
-38th Int. Conf.Machine Learning (ICML), PMLR 139, 2021, pp.10268–10278.
-[22] S. Gupta, A. Bhatt, D. Pathak, A. Gupta, Understanding collapse in non-contrastive siamese representation learning,
-in: Proc. European Conf.Computer Vision (ECCV), 2022,pp. 490–505.
-[23] T. Wolf, O. Dorent, A. Mehranian, J.A. Schnabel, Self-supervised pre-training with contrastive and masked
-autoencoder methods for dealing with small datasets in deep learning for medical imaging, Sci. Rep. 13 (2023)
-20246.
+Reaching high-accuracy image classification with a fraction of the labels, by combining
+self-supervised pre-training, encoder selection, and active learning. Benchmarked on a
+demanding real-world setting: semiconductor wafer defect inspection, where expert labels
+are slow and expensive to obtain.
+
+---
+
+## The problem
+
+Supervised deep learning needs large labeled datasets. In many real domains the images are
+plentiful but labels are the bottleneck: each one needs a domain expert, and the visual
+patterns are subtle enough that annotation takes minutes, not seconds. The practical
+question is not "what is the best model" but "how do I reach a useful accuracy with the
+fewest expert labels."
+
+This project isolates and measures the three levers that control that trade-off, and shows
+how they interact as the labeling budget grows.
+
+## The three levers
+
+1. **Self-supervised pre-training.** Learn representations from the unlabeled image archive
+   before any labels are spent, using contrastive and self-distillation objectives
+   (SimCLR, BYOL, DINOv2), and compare against natural-image transfer (ImageNet) and random
+   initialization.
+2. **Encoder architecture.** Convolutional (ResNet-18) versus transformer (ViT-S/16)
+   backbones, evaluated under identical protocols.
+3. **Active learning.** Choose which samples to label next with informed acquisition
+   (Diverse Mini-Batch, TypiClust) versus random selection.
+
+Nine encoder configurations (two architectures x five pre-training regimes) are each run
+with three acquisition strategies, giving a controlled 27-way comparison per dataset across
+a sweep of labeling budgets.
+
+## How it is measured
+
+- **Frozen-encoder linear probe:** the backbone is held fixed and only a linear head is
+  trained, so each score reflects representation quality rather than end-to-end fine-tuning.
+- **Balanced macro-F1** under heavy class imbalance, with 15-fold cross-validation
+  (5-fold for the active-learning runs).
+- **Area under the learning curve (AULC):** accuracy integrated over the labeling budget,
+  giving a single, budget-aware number to compare acquisition strategies with different
+  round counts on a common basis.
+- **Statistical testing:** Wilcoxon signed-rank tests (alpha = 0.05) on paired folds, so
+  reported differences are significant, not noise.
+
+## What it found
+
+- **Self-supervised pre-training is the dominant lever.** At the smallest labeling budget,
+  domain SSL with a ViT-S/16 beat ImageNet transfer by 21.6 points on one dataset and
+  5.9 points on the other (p < 0.001). The best configuration reached ~94% balanced accuracy
+  on both.
+- **Label efficiency, quantified.** The combined pipeline reached 80% F1 with fewer than
+  1,000 expert labels, against a transfer-learning baseline that needed several thousand to
+  get close.
+- **Architecture and pre-training trade places with budget.** At tiny budgets a weaker
+  backbone with strong domain pre-training beats a stronger backbone with generic transfer;
+  the ordering reverses once labels are plentiful.
+- **Active learning helps least when you expect it most.** Informed acquisition gave real
+  gains for weak or generic encoders (up to 7.6 AULC points), but the benefit shrank as the
+  representation improved and went negative for the strongest encoder, where random selection
+  matched or beat it. A useful, counterintuitive result: invest in the representation, not the
+  acquisition pipeline.
+
+## What this demonstrates
+
+- Self-supervised and representation learning (contrastive and self-distillation objectives)
+- Transfer learning and domain adaptation under distribution shift
+- Active learning and label-efficient / data-efficient modeling
+- Rigorous evaluation: cross-validation, class-imbalance-aware metrics, paired significance
+  testing, budget-aware curve analysis
+- Controlled, reproducible benchmarking at scale (dozens of model-strategy combinations)
+- Backbone comparison across CNN and vision-transformer families
+
+<!-- ## Stack
+
+PyTorch, with standard vision and ML tooling (torchvision / timm for backbones,
+scikit-learn for the linear probe and metrics, NumPy, Matplotlib for analysis). -->
+
+<!-- ## Repository layout
+
+> Fill in with your actual structure, for example:
+
+```
+data/            # dataset loaders and splits
+encoders/        # backbones and pre-training (SimCLR, BYOL, DINOv2)
+active_learning/ # acquisition strategies (random, DMB, TypiClust)
+eval/            # linear probe, metrics, cross-validation, statistics
+figures/         # analysis and result plots
+``` -->
+
+## Getting started
+
+> Add environment and run instructions, for example:
+
+```bash
+pip install -r requirements.txt
+python -m eval.linear_probe --config configs/vit_simclr.yaml
+```
