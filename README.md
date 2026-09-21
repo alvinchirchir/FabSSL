@@ -90,11 +90,4 @@ eval/            # linear probe, metrics, cross-validation, statistics
 figures/         # analysis and result plots
 ``` -->
 
-## Getting started
 
-> Add environment and run instructions, for example:
-
-```bash
-pip install -r requirements.txt
-python -m eval.linear_probe --config configs/vit_simclr.yaml
-```
